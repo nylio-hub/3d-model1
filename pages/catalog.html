@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Каталог модельеров — 3D Models</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <script>var savedTheme = localStorage.getItem('hub3d_theme'); if (savedTheme) document.documentElement.dataset.theme = savedTheme;</script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div id="header"></div>
+<main>
+  <div class="container">
+    <div class="page-head">
+      <div class="eyebrow">Каталог</div>
+      <div class="hero-top">
+        <h1>Модельеры</h1>
+        <div class="hero-stats" id="catStats"></div>
+      </div>
+    </div>
+    <div class="with-sidebar">
+      <aside class="card filter-panel">
+        <div class="row-between mb-2">
+          <h3 class="mb-0">Фильтры</h3>
+          <button class="btn-reset" id="fReset">Сбросить</button>
+        </div>
+        <div class="filter-group">
+          <input class="input" id="fSearch" placeholder="Имя или навык">
+        </div>
+        <div class="filter-group">
+          <div class="t">Категория</div>
+          <ul class="cat-list" id="catList"></ul>
+        </div>
+        <div class="filter-group">
+          <div class="t">Стоимость работ</div>
+          <select class="select" id="fPrice">
+            <option value="">Любая</option>
+            <option value="5000">до 5 000 ₽</option>
+            <option value="10000">до 10 000 ₽</option>
+            <option value="15000">до 15 000 ₽</option>
+            <option value="20000">до 20 000 ₽</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <div class="t">Рейтинг</div>
+          <select class="select" id="fRating">
+            <option value="">Любой</option>
+            <option value="4">от 4.0</option>
+            <option value="4.5">от 4.5</option>
+            <option value="4.8">от 4.8</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <div class="t">Срок выполнения</div>
+          <select class="select" id="fDays">
+            <option value="">Любой</option>
+            <option value="5">до 5 дней</option>
+            <option value="7">до 7 дней</option>
+            <option value="14">до 14 дней</option>
+          </select>
+        </div>
+      </aside>
+      <div>
+        <div class="list-bar">
+          <div class="count" id="foundCount"></div>
+          <div class="sort-box">
+            <span>Сортировка</span>
+            <select class="select" id="fSort">
+              <option value="rating">по рейтингу</option>
+              <option value="orders">по числу заказов</option>
+              <option value="price_asc">сначала дешевле</option>
+              <option value="price_desc">сначала дороже</option>
+            </select>
+          </div>
+        </div>
+        <div class="grid grid-3" id="modelersList"></div>
+      </div>
+    </div>
+  </div>
+</main>
+<div id="footer"></div>
+<script src="../js/data.js"></script>
+<script src="../js/demo.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/pages/catalog.js"></script>
+</body>
+</html>

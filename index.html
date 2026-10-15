@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3D Models — заказ 3D-моделей у фрилансеров</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <script>var savedTheme = localStorage.getItem('hub3d_theme'); if (savedTheme) document.documentElement.dataset.theme = savedTheme;</script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="header"></div>
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="eyebrow">Площадка 3D-моделирования</div>
+      <div class="hero-top">
+        <h1>3D-модель на заказ</h1>
+        <div class="hero-stats" id="heroStats"></div>
+      </div>
+      <div class="pills">
+        <a class="pill is-active" href="pages/catalog.html">Все модельеры</a>
+        <a class="pill" href="pages/catalog.html?rating=4.8">Рейтинг от 4.8</a>
+        <a class="pill" href="pages/catalog.html?price=10000">До 10 000 ₽</a>
+        <a class="pill" href="pages/catalog.html?cat=c1">Персонажи</a>
+        <a class="pill" href="pages/catalog.html?cat=c5">Для 3D-печати</a>
+        <a class="pill" href="pages/catalog.html?cat=c6">Игровые ассеты</a>
+      </div>
+    </div>
+  </section>
+  <div class="container">
+    <section class="section">
+      <div class="section-head">
+        <h2>Категории</h2>
+        <a class="small muted" href="pages/catalog.html">Весь каталог</a>
+      </div>
+      <div class="grid grid-4" id="categories"></div>
+    </section>
+    <section class="section" id="how">
+      <div class="section-head">
+        <h2>Порядок работы</h2>
+      </div>
+      <div class="grid grid-4">
+        <div class="card how-step">
+          <div class="how-num">1</div>
+          <h3>Описываете задачу</h3>
+          <div class="muted small">Указываете, что нужно смоделировать, бюджет и срок. Публикация заказа бесплатна.</div>
+        </div>
+        <div class="card how-step">
+          <div class="how-num">2</div>
+          <h3>Получаете отклики</h3>
+          <div class="muted small">Модельеры предлагают свою цену и срок. Вы сравниваете портфолио и рейтинг.</div>
+        </div>
+        <div class="card how-step">
+          <div class="how-num">3</div>
+          <h3>Выбираете исполнителя</h3>
+          <div class="muted small">Оплата замораживается на площадке и не уходит исполнителю до приёмки работы.</div>
+        </div>
+        <div class="card how-step">
+          <div class="how-num">4</div>
+          <h3>Принимаете работу</h3>
+          <div class="muted small">Проверяете модель, принимаете заказ и оставляете отзыв. Деньги уходят исполнителю.</div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="section-head">
+        <h2>Модельеры</h2>
+        <a class="small muted" href="pages/catalog.html">Весь каталог</a>
+      </div>
+      <div class="grid grid-3" id="topModelers"></div>
+    </section>
+    <section class="section">
+      <div class="section-head">
+        <h2>Открытые заказы</h2>
+        <a class="small muted" href="pages/orders.html">Все заказы</a>
+      </div>
+      <div class="grid grid-3" id="openOrders"></div>
+    </section>
+    <section class="section">
+      <div class="card">
+        <h2>Комиссия площадки</h2>
+        <p class="muted">
+          Оплата заказа удерживается площадкой до приёмки работы. После приёмки
+          исполнитель получает сумму сделки за вычетом комиссии <span id="commRate"></span>.
+        </p>
+        <div class="grid grid-2 mt-2">
+          <div class="field mb-0"><label for="commTotal">Сумма сделки, рублей</label><input class="input" id="commTotal" type="number" value="45000" min="0" step="500"></div>
+          <div class="money-box" id="commResult"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+<div id="footer"></div>
+<script src="js/data.js"></script>
+<script src="js/demo.js"></script>
+<script src="js/common.js"></script>
+<script src="js/pages/home.js"></script>
+</body>
+</html>

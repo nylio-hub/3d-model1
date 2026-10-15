@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Вход и регистрация — 3D Models</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <script>var savedTheme = localStorage.getItem('hub3d_theme'); if (savedTheme) document.documentElement.dataset.theme = savedTheme;</script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div id="header"></div>
+<main>
+  <div class="container">
+    <div class="auth-wrap">
+      <div class="tabs">
+        <button class="tab is-active" data-tab="login">Вход</button>
+        <button class="tab" data-tab="register">Регистрация</button>
+      </div>
+      <form class="card" id="loginForm">
+        <div class="field"><label for="liEmail">Электронная почта</label><input class="input" id="liEmail" type="email" placeholder="alina@mail.ru"></div>
+        <div class="field"><label for="liPassword">Пароль</label><input class="input" id="liPassword" type="password" placeholder="123456"></div>
+        <div id="loginError"></div>
+        <button class="btn btn-primary btn-block" type="submit">Войти</button>
+      </form>
+      <div id="quickLogin"></div>
+      <form class="card" id="registerForm" hidden>
+        <div class="field"><label for="rgName">Имя и фамилия</label><input class="input" id="rgName" placeholder="Иван Петров"></div>
+        <div class="field"><label for="rgEmail">Электронная почта</label><input class="input" id="rgEmail" type="email" placeholder="ivan@mail.ru"></div>
+        <div class="field"><label for="rgPassword">Пароль</label><input class="input" id="rgPassword" type="password" placeholder="не короче 4 символов"></div>
+        <div class="field"><label for="rgCity">Город</label><input class="input" id="rgCity" placeholder="Казань"></div>
+        <div class="field"><label>Кто вы на площадке</label><div class="row"><label class="btn btn-ghost" style="flex:1"><input type="radio" name="role" value="customer" checked> Заказчик</label><label class="btn btn-ghost" style="flex:1"><input type="radio" name="role" value="modeler"> Модельер</label></div>
+        </div>
+        <div id="modelerFields" hidden>
+          <div class="field"><label for="rgCategory">Основная категория работ</label><select class="select" id="rgCategory"></select></div>
+          <div class="field"><label for="rgPrice">Минимальная стоимость работы, рублей</label><input class="input" id="rgPrice" type="number" min="500" step="500" value="5000"></div>
+        </div>
+        <div id="registerError"></div>
+        <button class="btn btn-primary btn-block" type="submit">Зарегистрироваться</button>
+      </form>
+    </div>
+  </div>
+</main>
+<div id="footer"></div>
+<script src="../js/data.js"></script>
+<script src="../js/demo.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/pages/login.js"></script>
+</body>
+</html>
