@@ -1,0 +1,15 @@
+User-agent: *
+Disallow: /pages/login.html
+Disallow: /pages/account.html
+Disallow: /pages/profile-edit.html
+Disallow: /pages/create-order.html
+
+
+User-agent: Yandex
+Disallow: /pages/login.html
+Disallow: /pages/account.html
+Disallow: /pages/profile-edit.html
+Disallow: /pages/create-order.html
+Clean-param: utm_source&utm_medium&utm_campaign
+
+Sitemap: https://example.com/sitemap.xml
