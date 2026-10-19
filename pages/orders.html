@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Заказы — 3D Models</title>
+  <meta name="description" content="Актуальные заказы на создание 3D-моделей. Откликайтесь на проекты, предлагайте цену и срок.">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <script>var savedTheme = localStorage.getItem('hub3d_theme'); if (savedTheme) document.documentElement.dataset.theme = savedTheme;</script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div id="header"></div>
+<main>
+  <div class="container">
+    <div class="page-head">
+      <div class="eyebrow">Заказы</div>
+      <h1>Заказы на 3D-модели</h1>
+      <p class="muted">Модельер может откликнуться на любой открытый заказ.</p>
+    </div>
+    <div class="row row-wrap mb-3">
+      <input class="input" id="oSearch" placeholder="Поиск по заказам" style="max-width:250px">
+      <select class="select" id="oCategory" style="max-width:220px"></select>
+      <select class="select" id="oStatus" style="max-width:180px">
+        <option value="">Все статусы</option>
+        <option value="open">Открытые</option>
+        <option value="in_progress">В работе</option>
+        <option value="review">На проверке</option>
+        <option value="done">Завершённые</option>
+        <option value="cancelled">Отменённые</option>
+      </select>
+      <button class="btn btn-ghost btn-sm" id="oReset">Сбросить</button>
+    </div>
+    <div class="list-bar">
+      <div class="count" id="ordersCount"></div>
+    </div>
+    <div class="grid grid-2" id="ordersList"></div>
+  </div>
+</main>
+<div id="footer"></div>
+<script src="../js/data.js"></script>
+<script src="../js/demo.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/pages/orders.js"></script>
+</body>
+</html>

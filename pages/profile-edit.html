@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Мой профиль — 3D Models</title>
+  <meta name="description" content="Изменение данных профиля, специализации и портфолио модельера.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <script>var savedTheme = localStorage.getItem('hub3d_theme'); if (savedTheme) document.documentElement.dataset.theme = savedTheme;</script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div id="header"></div>
+<main>
+  <div class="container" style="max-width:760px">
+    <div class="page-head">
+      <h1>Мой профиль</h1>
+      <p class="muted" id="pageHint">Личные данные и настройки учётной записи.</p>
+    </div>
+    <div id="notice"></div>
+    <div id="accountArea" hidden>
+      <form class="card mb-3" id="accountForm">
+        <h3>Личные данные</h3>
+        <div class="grid grid-2">
+          <div class="field"><label for="aName">Имя и фамилия</label><input class="input" id="aName" maxlength="60"></div>
+          <div class="field"><label for="aCity">Город</label><input class="input" id="aCity" maxlength="40"></div>
+        </div>
+        <div class="grid grid-2">
+          <div class="field"><label for="aOldPassword">Текущий пароль</label><input class="input" id="aOldPassword" type="password" placeholder="только для смены пароля"></div>
+          <div class="field"><label for="aNewPassword">Новый пароль</label><input class="input" id="aNewPassword" type="password" placeholder="не короче 4 символов"></div>
+        </div>
+        <div id="accountError"></div>
+        <button class="btn btn-primary" type="submit">Сохранить</button>
+      </form>
+    </div>
+    <div id="modelerArea" hidden>
+      <form class="card mb-3" id="profileForm">
+        <h3>Профиль исполнителя</h3>
+        <div class="field"><label for="pSpec">Специализация</label><input class="input" id="pSpec" maxlength="60" placeholder="Персонажи и цифровой скульпт"></div>
+        <div class="grid grid-2">
+          <div class="field"><label for="pCategory">Основная категория</label><select class="select" id="pCategory"></select></div>
+          <div class="field"><label for="pDays">Средний срок выполнения, дней</label><input class="input" id="pDays" type="number" min="1" max="180"></div>
+        </div>
+        <div class="field"><label for="pPrice">Минимальная стоимость заказа, рублей</label><input class="input" id="pPrice" type="number" min="500" step="500"></div>
+        <div class="field"><label for="pSkills">Навыки и инструменты, через запятую</label><input class="input" id="pSkills" placeholder="Blender, ZBrush, Ретопология"></div>
+        <div class="field"><label for="pBio">О себе</label><textarea class="textarea" id="pBio" placeholder="Чем занимаетесь, что отдаёте заказчику"></textarea></div>
+        <div id="profileError"></div>
+        <button class="btn btn-primary" type="submit">Сохранить профиль</button>
+      </form>
+      <div class="card mb-3">
+        <h3>Работы в портфолио</h3>
+        <div id="worksList" class="grid grid-3"></div>
+      </div>
+      <form class="card" id="workForm">
+        <h3 id="workFormTitle">Добавить работу</h3>
+        <div class="field"><label for="wTitle">Название работы</label><input class="input" id="wTitle" maxlength="70" placeholder="Воин в пластинчатых доспехах"></div>
+        <div class="grid grid-2">
+          <div class="field"><label for="wCategory">Категория</label><select class="select" id="wCategory"></select></div>
+          <div class="field"><label for="wPrice">Стоимость работы, рублей</label><input class="input" id="wPrice" type="number" min="500" step="500" placeholder="24000"></div>
+        </div>
+        <div id="workError"></div>
+        <div class="row">
+          <button class="btn btn-primary" type="submit" id="workSubmit">Добавить в портфолио</button>
+          <button class="btn btn-ghost" type="button" id="workCancel" hidden>Отменить</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+<div id="footer"></div>
+<script src="../js/data.js"></script>
+<script src="../js/demo.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/pages/profile-edit.js"></script>
+</body>
+</html>

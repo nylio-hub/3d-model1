@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Новый заказ — 3D Models</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <script>var savedTheme = localStorage.getItem('hub3d_theme'); if (savedTheme) document.documentElement.dataset.theme = savedTheme;</script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div id="header"></div>
+<main>
+  <div class="container" style="max-width:720px">
+    <div class="page-head">
+      <h1>Разместить заказ</h1>
+      <p class="muted">Укажите, что нужно смоделировать, бюджет и срок сдачи.</p>
+    </div>
+    <div id="notice"></div>
+    <form class="card" id="orderForm">
+      <div class="field"><label for="fTitle">Название заказа</label><input class="input" id="fTitle" maxlength="90" placeholder="Например: комплект миниатюр для настольной игры"></div>
+      <div class="field"><label for="fCategory">Категория</label><select class="select" id="fCategory"></select></div>
+      <div class="field"><label for="fDescription">Описание задачи</label><textarea class="textarea" id="fDescription" placeholder="Что нужно смоделировать, в каком стиле, какие форматы файлов нужны, есть ли референсы"></textarea></div>
+      <div class="grid grid-2">
+        <div class="field"><label for="fBudget">Бюджет, рублей</label><input class="input" id="fBudget" type="number" min="500" step="500" placeholder="45000"></div>
+        <div class="field"><label for="fDeadline">Срок сдачи</label><input class="input" id="fDeadline" type="date"></div>
+      </div>
+      <div id="invitedBox"></div>
+      <div class="money-box mb-2" id="commissionPreview"></div>
+      <div id="formError"></div>
+      <button class="btn btn-primary btn-lg btn-block" type="submit">Опубликовать заказ</button>
+    </form>
+  </div>
+</main>
+<div id="footer"></div>
+<script src="../js/data.js"></script>
+<script src="../js/demo.js"></script>
+<script src="../js/common.js"></script>
+<script src="../js/pages/create-order.js"></script>
+</body>
+</html>
